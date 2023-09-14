@@ -1,14 +1,20 @@
 
 
+import tkinter as tk
 
-from flask import Flask
+#Window Parameters
+window = tk.Tk()
+window.title('MindFlow')
+window.geometry('700x500')
 
-app = Flask(__name__)
+#Static Labels
+welcome_msg = tk.Label(window, text="Welcome to MindFlow!", font=("Comic Sans MS", 20, 'bold'))
+welcome_msg.pack(pady=20)
 
-@app.route('/')
-def test():
+#Buttons
 
-    return 'jello'
 
-if __name__ == '__main__':
-    app.run()
+
+
+
+window.mainloop()
