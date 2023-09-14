@@ -1,20 +1,11 @@
 
 
-import tkinter as tk
+import sys
+from PySide2.QtWidgets import QApplication, QPushButton
 
-#Window Parameters
-window = tk.Tk()
-window.title('MindFlow')
-window.geometry('700x500')
+app = QApplication(sys.argv)
 
-#Static Labels
-welcome_msg = tk.Label(window, text="Welcome to MindFlow!", font=("Comic Sans MS", 20, 'bold'))
-welcome_msg.pack(pady=20)
+window = QPushButton("Push Me")
+window.show()
 
-#Buttons
-
-
-
-
-
-window.mainloop()
+app.exec_()
