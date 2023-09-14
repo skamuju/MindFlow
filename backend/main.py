@@ -10,13 +10,21 @@ flip = True
 def welcome():
     return 'Welcome to MindFlow!'
 
-@app.route('/switch')
-def switch():
-    if flip:
-        return 'True'
-    
-    else:
-        return 'False'
+@app.route('/graph')
+def graphs():
+    return "pending"
+
+@app.route('/journals')
+def journals():
+    return "pending"
+
+@app.route('/medicines')
+def meds():
+    return "pending"
+
+@app.route('/Resources')
+def recs():
+    return "pending"
 
 
 if __name__ == "__main__":
