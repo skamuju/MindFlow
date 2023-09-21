@@ -1,6 +1,7 @@
 
 
-from flask import Flask
+from flask import Flask, request, jsonify
+from pymongo import MongoClient, operations
 
 app = Flask(__name__)
 
@@ -9,6 +10,13 @@ flip = True
 @app.route('/')
 def welcome():
     return 'Welcome to MindFlow!'
+
+@app.route('/register')
+def register():
+    username = str(input())
+    password = str(input())
+
+
 
 @app.route('/graph')
 def graphs():
