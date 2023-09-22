@@ -36,8 +36,6 @@ def login():
     else:
         return jsonify({"success": False})
 
-    
-
 @app.route('/graph')
 def graphs():
     return "pending"
