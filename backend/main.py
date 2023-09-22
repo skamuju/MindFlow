@@ -11,17 +11,32 @@ def welcome():
 
 @app.route('/register', methods = ['POST'])
 def register():
-    data = request.get.json()
-    my_client = MongoClient('mongodb+srv://skamuju:<QAtgV28nj9587Ewl>@cluster0.vdo8j3z.mongodb.net/?retryWrites=true&w=majority')
+    data = request.get_json()
+    my_client = MongoClient('mongodb+srv://skamuju2:mflow07@cluster0.vdo8j3z.mongodb.net/?retryWrites=true&w=majority')
     db = my_client['MindFlow']
     collection = db['users']
 
-    post = {'username': data["username"], 'email': data["email"],
-            'password': data["password"], 'devices': [], "traffic": 1}
-
+    post = {'username': data["username"], 'password': data["password"]}
     collection.insert_one(post)
+    
     return jsonify({"success": True})
 
+@app.route('/login', methods = ['GET'])
+def login():
+    data = request.get_json()
+    my_client = MongoClient('mongodb+srv://skamuju2:mflow07@cluster0.vdo8j3z.mongodb.net/?retryWrites=true&w=majority')
+    db = my_client['MindFlow']
+    collection = db['users']
+
+    post = {'username': data["username"], 'password': data["password"]}
+    
+    if collection.find_one(post):
+        return jsonify({"success": True})
+    
+    else:
+        return jsonify({"success": False})
+
+    
 
 @app.route('/graph')
 def graphs():
