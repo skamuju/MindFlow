@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.top_flow {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-height: 50%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+.bottom_flow {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-height: 50%;
+  bottom: 0;
+  left: 0;
+  object-fit: fill;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
